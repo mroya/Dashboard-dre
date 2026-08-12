@@ -66,19 +66,19 @@ ${data.avaliacaoGeral?.placarOuro?.valor || ''} — ${data.avaliacaoGeral?.placa
           </div>
 
           {/* Botões de Ação */}
-          <div className="flex items-center gap-2.5 flex-wrap">
+          <div className="grid grid-cols-2 sm:flex sm:items-center gap-2 sm:gap-2.5 w-full md:w-auto">
             <button
               onClick={handleCopyWhatsApp}
-              className="btn-secondary text-xs py-2 px-3.5 flex items-center gap-1.5 hover:border-emerald-500/50 text-emerald-300 bg-emerald-950/30"
+              className="btn-secondary text-xs py-2 px-3 flex items-center justify-center gap-1.5 hover:border-emerald-500/50 text-emerald-300 bg-emerald-950/30"
             >
               {copied ? (
                 <>
-                  <Check className="w-4 h-4 text-emerald-400" />
-                  <span>Copiado WhatsApp!</span>
+                  <Check className="w-3.5 h-3.5 text-emerald-400" />
+                  <span className="truncate">Copiado WhatsApp!</span>
                 </>
               ) : (
                 <>
-                  <MessageSquare className="w-4 h-4 text-emerald-400" />
+                  <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
                   <span>WhatsApp</span>
                 </>
               )}
@@ -86,15 +86,15 @@ ${data.avaliacaoGeral?.placarOuro?.valor || ''} — ${data.avaliacaoGeral?.placa
 
             <button
               onClick={() => setIsEmailModalOpen(true)}
-              className="btn-secondary text-xs py-2 px-3.5 flex items-center gap-1.5 hover:border-cyan-500/50 text-cyan-300 bg-cyan-950/30"
+              className="btn-secondary text-xs py-2 px-3 flex items-center justify-center gap-1.5 hover:border-cyan-500/50 text-cyan-300 bg-cyan-950/30"
             >
-              <Mail className="w-4 h-4 text-cyan-400" />
-              <span>Enviar por E-mail</span>
+              <Mail className="w-3.5 h-3.5 text-cyan-400" />
+              <span className="truncate">E-mail</span>
             </button>
 
             <button
               onClick={onOpenUpload}
-              className="btn-primary text-xs py-2 px-3.5 flex items-center gap-1.5"
+              className="btn-primary text-xs py-2 px-3.5 col-span-2 sm:col-span-1 flex items-center justify-center gap-1.5"
             >
               <FileUp className="w-4 h-4" />
               <span>Analisar Novo PDF</span>

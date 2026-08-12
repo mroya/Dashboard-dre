@@ -11,27 +11,27 @@ export const Header = ({
 }) => {
   return (
     <header className="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-xl sticky top-0 z-40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between gap-2">
         {/* Logo & Marca */}
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
-            <Sparkles className="w-5 h-5 text-white" />
+        <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
+            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
           </div>
           <div>
-            <div className="flex items-center gap-2">
-              <span className="font-extrabold text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-cyan-300 bg-clip-text text-transparent font-heading">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className="font-extrabold text-base sm:text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-cyan-300 bg-clip-text text-transparent font-heading">
                 DRE Inteligente
               </span>
-              <span className="bg-cyan-500/10 text-cyan-400 text-[10px] font-bold px-2 py-0.5 rounded-full border border-cyan-500/20 uppercase tracking-wider">
+              <span className="bg-cyan-500/10 text-cyan-400 text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded-full border border-cyan-500/20 uppercase tracking-wider">
                 IA 2.5
               </span>
             </div>
-            <p className="text-xs text-slate-400 font-medium">Leitura, Interpretação & Ação Gerencial</p>
+            <p className="hidden sm:block text-xs text-slate-400 font-medium">Leitura, Interpretação & Ação Gerencial</p>
           </div>
         </div>
 
-        {/* Informações da Filial e Período */}
-        <div className="hidden md:flex items-center gap-4 bg-slate-900/90 px-4 py-1.5 rounded-xl border border-slate-800/80 shadow-inner">
+        {/* Informações da Filial e Período (Desktop/Tablet) */}
+        <div className="hidden lg:flex items-center gap-4 bg-slate-900/90 px-4 py-1.5 rounded-xl border border-slate-800/80 shadow-inner">
           <div className="flex items-center gap-1.5 text-xs text-slate-300">
             <Store className="w-3.5 h-3.5 text-cyan-400" />
             <span className="font-semibold text-white">Filial {filial}</span>
@@ -44,51 +44,54 @@ export const Header = ({
         </div>
 
         {/* Navegação e Ação de Upload */}
-        <div className="flex items-center gap-3">
-          <nav className="flex items-center gap-1 bg-slate-900/60 p-1 rounded-xl border border-slate-800">
+        <div className="flex items-center gap-1.5 sm:gap-3">
+          <nav className="flex items-center gap-0.5 sm:gap-1 bg-slate-900/60 p-1 rounded-xl border border-slate-800">
             <button
               onClick={() => setCurrentTab('dashboard')}
-              className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+              title="Visão Geral da DRE"
+              className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                 currentTab === 'dashboard'
                   ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 shadow-sm'
                   : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
               }`}
             >
-              <BarChart3 className="w-4 h-4" />
-              <span>Visão Geral</span>
+              <BarChart3 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <span className="hidden sm:inline">Visão Geral</span>
             </button>
 
             <button
               onClick={() => setCurrentTab('history')}
-              className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+              title="Histórico de Relatórios"
+              className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                 currentTab === 'history'
                   ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 shadow-sm'
                   : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
               }`}
             >
-              <History className="w-4 h-4" />
-              <span>Histórico</span>
+              <History className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <span className="hidden sm:inline">Histórico</span>
             </button>
 
             <button
               onClick={() => setCurrentTab('compare')}
-              className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+              title="Metas e Projeções"
+              className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                 currentTab === 'compare'
                   ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 shadow-sm'
                   : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
               }`}
             >
-              <FileText className="w-4 h-4" />
-              <span>Comparação</span>
+              <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <span className="hidden sm:inline">Comparação</span>
             </button>
           </nav>
 
           <button
             onClick={onOpenUpload}
-            className="btn-primary text-xs py-2 px-3.5 shadow-cyan-500/20"
+            className="btn-primary text-xs py-1.5 sm:py-2 px-2.5 sm:px-3.5 shadow-cyan-500/20 shrink-0"
           >
             <UploadCloud className="w-4 h-4" />
-            <span className="hidden sm:inline">Analisar DRE</span>
+            <span className="hidden md:inline">Analisar DRE</span>
           </button>
         </div>
       </div>
