@@ -6,8 +6,10 @@ import { HistoryPage } from './pages/HistoryPage';
 import { ComparePage } from './pages/ComparePage';
 import { getSampleDREData } from './data/sampleDRE';
 import { getDREHistory } from './repositories/dreRepository';
+import { useTheme } from './contexts/ThemeContext';
 
 export function App() {
+  const { theme } = useTheme();
   const [currentTab, setCurrentTab] = useState('dashboard');
   const [activeReport, setActiveReport] = useState(() => getSampleDREData());
   const [isUploadOpen, setIsUploadOpen] = useState(false);
@@ -43,7 +45,10 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col font-sans transition-colors duration-300">
+    <div
+      data-theme={theme}
+      className={`app-container theme-${theme} ${theme} min-h-screen flex flex-col font-sans transition-colors duration-300`}
+    >
       {/* Topo / Header */}
       <Header
         currentTab={currentTab}
