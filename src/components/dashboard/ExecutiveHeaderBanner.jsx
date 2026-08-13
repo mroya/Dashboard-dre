@@ -147,7 +147,7 @@ ${data.avaliacaoGeral?.placarOuro?.valor || ''} — ${data.avaliacaoGeral?.placa
                 </span>
               </div>
 
-              <div className="text-3xl sm:text-4xl font-extrabold text-white font-mono tracking-tight text-emerald-400 my-1">
+              <div className="text-3xl sm:text-4xl font-extrabold font-mono tracking-tight text-emerald-400 my-1">
                 {typeof data.avaliacaoGeral?.placarOuro?.valor === 'number' || (!isNaN(data.avaliacaoGeral?.placarOuro?.valor) && !String(data.avaliacaoGeral?.placarOuro?.valor).includes('R$'))
                   ? formatCurrency(Number(data.avaliacaoGeral?.placarOuro?.valor))
                   : (data.avaliacaoGeral?.placarOuro?.valor || '+R$ 237.097')}
