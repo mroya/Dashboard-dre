@@ -87,6 +87,19 @@ export const Header = ({
               <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               <span className="hidden sm:inline">Comparação</span>
             </button>
+
+            <button
+              onClick={() => setCurrentTab('mural')}
+              title="Quadro Mural de Loja (Gestão à Vista)"
+              className={`flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                currentTab === 'mural'
+                  ? 'bg-amber-500/25 text-amber-300 border border-amber-500/40 shadow-sm'
+                  : 'text-slate-400 hover:text-amber-300 hover:bg-slate-800/50'
+              }`}
+            >
+              <Store className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400" />
+              <span className="hidden sm:inline">Mural Loja</span>
+            </button>
           </nav>
 
           {/* Botão de Alternância Dia / Noite */}

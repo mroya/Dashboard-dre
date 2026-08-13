@@ -4,6 +4,7 @@ import { UploadModal } from './components/upload/UploadModal';
 import { DashboardPage } from './pages/DashboardPage';
 import { HistoryPage } from './pages/HistoryPage';
 import { ComparePage } from './pages/ComparePage';
+import { MuralPage } from './pages/MuralPage';
 import { getSampleDREData } from './data/sampleDRE';
 import { getDREHistory } from './repositories/dreRepository';
 import { useTheme } from './contexts/ThemeContext';
@@ -77,6 +78,10 @@ export function App() {
 
         {currentTab === 'compare' && (
           <ComparePage activeReport={activeReport} />
+        )}
+
+        {currentTab === 'mural' && (
+          <MuralPage activeReport={activeReport} />
         )}
       </main>
 
