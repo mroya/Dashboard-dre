@@ -331,3 +331,169 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 9999;
   padding: 16px;
 }
+
+/* ==========================================================================
+   MODO CLARO (DIA / LIGHT MODE)
+   ========================================================================== */
+
+.light, body.light-mode {
+  --bg-primary: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+  --bg-surface-glass: rgba(255, 255, 255, 0.92);
+  --bg-surface-subtle: rgba(241, 245, 249, 0.9);
+
+  --border-subtle: rgba(203, 213, 225, 0.85);
+  --border-glow: rgba(2, 132, 199, 0.35);
+  --border-active: rgba(2, 132, 199, 0.6);
+
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-subtle: #64748b;
+  --text-highlight: #0284c7;
+
+  /* Semáforos adaptados para modo claro */
+  --status-green: #047857;
+  --status-green-bg: rgba(16, 185, 129, 0.15);
+  --status-green-border: rgba(16, 185, 129, 0.4);
+
+  --status-yellow: #b45309;
+  --status-yellow-bg: rgba(245, 158, 11, 0.15);
+  --status-yellow-border: rgba(245, 158, 11, 0.4);
+
+  --status-orange: #c2410c;
+  --status-orange-bg: rgba(234, 88, 12, 0.15);
+  --status-orange-border: rgba(234, 88, 12, 0.4);
+
+  --status-red: #b91c1c;
+  --status-red-bg: rgba(239, 68, 68, 0.15);
+  --status-red-border: rgba(239, 68, 68, 0.4);
+
+  --status-blue: #1d4ed8;
+  --status-blue-bg: rgba(59, 130, 246, 0.15);
+  --status-blue-border: rgba(59, 130, 246, 0.4);
+}
+
+.light body, body.light-mode {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(2, 132, 199, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(99, 102, 241, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.03) 0%, transparent 60%) !important;
+}
+
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(226, 232, 240, 0.95);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+}
+
+.light .glass-panel-elevated {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(203, 213, 225, 0.9);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+}
+
+.light .glass-card-interactive {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(226, 232, 240, 0.9);
+}
+
+.light .glass-card-interactive:hover {
+  border-color: rgba(2, 132, 199, 0.4);
+  box-shadow: 0 8px 25px rgba(2, 132, 199, 0.12);
+}
+
+.light .btn-secondary {
+  background: #ffffff;
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+
+.light .btn-secondary:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.light header {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light .modal-overlay {
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.light table thead {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+}
+
+.light table tbody {
+  background-color: #ffffff !important;
+}
+
+.light table tr:nth-child(even) {
+  background-color: #f8fafc !important;
+}
+
+.light .text-white {
+  color: #0f172a !important;
+}
+
+.light .text-slate-100,
+.light .text-slate-200 {
+  color: #1e293b !important;
+}
+
+.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+.light .text-slate-400 {
+  color: #64748b !important;
+}
+
+.light .bg-slate-900,
+.light .bg-slate-900\/90,
+.light .bg-slate-900\/80,
+.light .bg-slate-900\/60,
+.light .bg-slate-900\/50,
+.light .bg-slate-950,
+.light .bg-slate-950\/40,
+.light .bg-slate-950\/90 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light .border-slate-800,
+.light .border-slate-800\/80,
+.light .border-slate-800\/60,
+.light .border-slate-700,
+.light .border-slate-700\/80 {
+  border-color: #e2e8f0 !important;
+}
+
+.light input,
+.light select,
+.light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+.light input::placeholder {
+  color: #94a3b8 !important;
+}
+
+.light .bg-emerald-950\/40,
+.light .bg-emerald-950\/30 {
+  background-color: rgba(16, 185, 129, 0.1) !important;
+}
+
+.light .bg-cyan-950\/40,
+.light .bg-cyan-950\/30 {
+  background-color: rgba(14, 165, 233, 0.1) !important;
+}
+

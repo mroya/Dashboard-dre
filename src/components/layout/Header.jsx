@@ -1,5 +1,6 @@
 import React from 'react';
-import { FileText, History, BarChart3, UploadCloud, Sparkles, Store, Calendar } from 'lucide-react';
+import { FileText, History, BarChart3, UploadCloud, Sparkles, Store, Calendar, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../../hooks/useTheme';
 
 export const Header = ({
   currentTab,
@@ -9,6 +10,8 @@ export const Header = ({
   periodo = 'Mês Atual',
   dataRef = '10/08/2026',
 }) => {
+  const { theme, toggleTheme, isDark } = useTheme();
+
   return (
     <header className="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-xl sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between gap-2">
@@ -43,8 +46,8 @@ export const Header = ({
           </div>
         </div>
 
-        {/* Navegação e Ação de Upload */}
-        <div className="flex items-center gap-1.5 sm:gap-3">
+        {/* Navegação, Seletor Dia/Noite e Upload */}
+        <div className="flex items-center gap-1.5 sm:gap-2.5">
           <nav className="flex items-center gap-0.5 sm:gap-1 bg-slate-900/60 p-1 rounded-xl border border-slate-800">
             <button
               onClick={() => setCurrentTab('dashboard')}
@@ -85,6 +88,20 @@ export const Header = ({
               <span className="hidden sm:inline">Comparação</span>
             </button>
           </nav>
+
+          {/* Botão de Alternância Dia / Noite */}
+          <button
+            onClick={toggleTheme}
+            title={isDark ? 'Mudar para Modo Dia (Claro)' : 'Mudar para Modo Noite (Escuro)'}
+            className="p-2 rounded-xl border border-slate-800 bg-slate-900/60 hover:bg-slate-800/80 transition-all text-slate-300 hover:text-white flex items-center justify-center shrink-0"
+            aria-label="Alternar tema"
+          >
+            {isDark ? (
+              <Sun className="w-4 h-4 text-amber-400 hover:rotate-45 transition-transform" />
+            ) : (
+              <Moon className="w-4 h-4 text-indigo-500 hover:-rotate-12 transition-transform" />
+            )}
+          </button>
 
           <button
             onClick={onOpenUpload}
